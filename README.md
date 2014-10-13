@@ -21,12 +21,12 @@ I recommend that anyone wishing to understand what I've done should tackle these
 Once you download the Chinook Database and unzip the file, you'll see a collection of scripts.  You're looking for the `Chinook_PostgreSql.sql` file.  If you just run the SQL file from the `psql` command prompt, PostgreSQL will happily dump the database objects into your public schema.  I prefer to have a named schema, and the examples here assume one.  In order to do that, you'll need to do a few more steps:
 
 ```
-psql> CREATE SCHEMA "chinook";
+psql> CREATE SCHEMA chinook;
 psql> SET search_path TO chinook;
 psql> \i /path/to/script/Chinook_PostgreSql.sql
 ```
 
-Note that many of the SQL examples using the Chinook database depend on a faulty import of Chinook data that doesn't take into account character set issues, and thus leaves out many records in tables.  Although we would normally not want this to happen, doing it intentionally here provides some interesting real-world data integrity problems to inspect, so I've done this on purpose.  A log of the import process with errors and warnings ([`chinook_import.log`](https://github.com/nihonjinrxs/polyglot-october2014/blob/master/sql/chinook_import.log))is provided in the `.sql` directory, so that one can manually achieve an identical result if desired (although the examples should work with any non-zero number of import errors in the specified tables, so long as some data is actually imported).
+Note that many of the SQL examples using the Chinook database depend on a faulty import of Chinook data that doesn't take into account character set issues, and thus leaves out many records in tables.  Although we would normally not want this to happen, doing it intentionally here provides some interesting real-world data integrity problems to inspect, so I've done this on purpose.  A log of the import process with errors and warnings ([`chinook_import.log`](https://github.com/nihonjinrxs/polyglot-october2014/blob/master/sql/chinook_import.log)) is provided in the `.sql` directory, so that one can manually achieve an identical result if desired (although the examples should work with any non-zero number of import errors in the specified tables, so long as some data is actually imported).
 
 ### Disclaimer
 This work and the opinions expressed here are my own, and do not purport to represent the views of my current or former employers.
