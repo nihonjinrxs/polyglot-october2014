@@ -1,11 +1,36 @@
+/***************************************
+  Polyglot Programming DC : October 2014
+  Manipulating Data in Style with SQL
+  **************************************
+  Author:  Ryan B. Harvey
+  Created: 2014-08-02
+  **************************************
+  This script inspects the Invoice and
+  InvoiceLine tables in the Chinook
+  database to find problems with stored
+  totals not matching InvoiceLine record
+  sums, then fixes this issue via a view
+  that computes the total for an invoice
+  on the fly.
+  
+  Note that this depends on a bad import
+  of Chinook data that doesn't take into
+  account character set issues, and thus
+  leaves out many records in tables.
+  Although we would normally not want 
+  this to happen, doing it intentionally
+  here provides some interesting real-
+  world data integrity problems to 
+  inspect, so I've done this on purpose.
+****************************************/
+
+/* Setup -- set search path and drop view if exists */
+SET search_path TO chinook;
+DROP VIEW IF EXISTS chinook."vInvoice";
+
 /* Do we have any invoices where the value in the total field
    doesn't match the sum of the line items?
 */
-
-SET search_path TO chinook;
-
-DROP VIEW IF EXISTS chinook."vInvoice";
-
 SELECT 
 	inv."InvoiceId", 
 	inv."CustomerId", 
@@ -47,3 +72,4 @@ GROUP BY inv."InvoiceId", vinv."Total"
 HAVING inv."Total" <> sum(line."Quantity" * line."UnitPrice")
 	OR vinv."Total" <> sum(line."Quantity" * line."UnitPrice")
 ;
+
