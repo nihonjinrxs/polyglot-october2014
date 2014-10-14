@@ -1,19 +1,21 @@
 ---
-title: "SQL, the Sequel : Data Wranglers DC : August 2014 Meetup"
+title: "Manipulating Data with Style in SQL : Polyglot Programming DC : October 2014 Meetup"
 output:
   knitrBootstrap::bootstrap_document:
-    title: "SQL, the Sequel : Data Wranglers DC : August 2014 Meetup"
+    title: "Manipulating Data with Style in SQL : Polyglot Programming DC : October 2014 Meetup"
     theme: flatly
     highlight: github
     theme.chooser: TRUE
     highlight.chooser: TRUE
 ---
 
-SQL, the Sequel : Data Wranglers DC : August 2014 Meetup
+Manipulating Data with Style in SQL
 ========================================================
+## Polyglot Programming DC : October 2014 Meetup
+
 **Author:**  [Ryan B. Harvey](http://datascientist.guru)
 
-**Created:** 2014-07-17 / **Last Updated:** 2014-07-18
+**Created:** 2014-07-17 / **Last Updated:** 2014-10-13
 
 **Contents:**
 - The `sqldf` package: SQL on dataframes in R
@@ -25,10 +27,11 @@ SQL, the Sequel : Data Wranglers DC : August 2014 Meetup
 - **[sqldf](http://cran.r-project.org/package=sqldf):** Perform SQL Selects on R Data Frames. R package version 0.4-7.1. Author: G. Grothendieck (2014) [more info & source](https://code.google.com/p/sqldf/)
 
 **References:**
-- This RPub was created for a talk to the Data Wranglers DC meetup group on August 6, 2014.
-  - Talk information: [http://www.meetup.com/Data-Wranglers-DC/events/177269432/](http://www.meetup.com/Data-Wranglers-DC/events/177269432/)
-  - This is only a portion of the talk, which included database information, SQL code, an [IPython notebook](http://nbviewer.ipython.org/github/nihonjinrxs/dwdc-august2014/blob/master/python/sqldf_examples_python.ipynb), and possibly an IJulia notebook too.
-  - My code, slides and the sample data are all available on Github. [https://github.com/nihonjinrxs/dwdc-august2014](https://github.com/nihonjinrxs/dwdc-august2014)
+- This RPub was originally created for a talk to the Data Wranglers DC meetup group on August 6, 2014, and is updated for a talk to the Polyglot Programming DC meetup group on October 14, 2014.
+  - August talk information: [http://www.meetup.com/Data-Wranglers-DC/events/177269432/](http://www.meetup.com/Data-Wranglers-DC/events/177269432/)
+  - October talk information: [http://www.meetup.com/Polyglot-Programming-DC/events/208670052/](http://www.meetup.com/Polyglot-Programming-DC/events/208670052/)
+  - This is only a portion of the talk, which included database information, SQL code, an [IPython notebook](http://nbviewer.ipython.org/github/nihonjinrxs/polyglot-october2014/blob/master/python/sqldf_examples_python.ipynb).
+  - My code, slides and the sample data are all available on Github. [https://github.com/nihonjinrxs/polyglot-october2014](https://github.com/nihonjinrxs/polyglot-october2014)
 
 The `sqldf` package is an R package that creates tables in a local SQLite database, runs the requested SQL query on those tables, and then drops the tables from the SQLite database.  Although this can be slower than subsetting a data frame directly, in cases where the data frame is very complex and conditions get difficult to parse, SQL can provide a straightforward, declarative way of requesting a particular data subset.
 
